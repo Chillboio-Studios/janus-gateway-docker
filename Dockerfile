@@ -51,11 +51,21 @@ RUN cd /tmp && \
 RUN git clone https://github.com/meetecho/janus-gateway.git /usr/local/src/janus-gateway
 
 RUN cd /usr/local/src/janus-gateway && \
-	sh autogen.sh && \
-	./configure --enable-post-processing --prefix=/usr/local --enable-all-plugins --enable-all-transports --enable-websockets --enable-http && \
-	make && \
-	make install && \
-	make configs
+    sh autogen.sh && \
+    ./configure \
+      --prefix=/usr/local \
+      --enable-post-processing \
+      --enable-websockets \
+      --enable-rest \
+      --enable-audiobridge \
+      --enable-videoroom \
+      --enable-streaming \
+      --enable-echotest \
+      --enable-recordplay \
+      --enable-textroom && \
+    make && \
+    make install && \
+    make configs
 
 FROM debian:bullseye-slim
 
