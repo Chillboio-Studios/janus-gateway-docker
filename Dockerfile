@@ -120,5 +120,5 @@ EXPOSE 8000
 EXPOSE 7088
 EXPOSE 7089
 
-CMD ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
+CMD ["/usr/local/bin/janus"]
 
