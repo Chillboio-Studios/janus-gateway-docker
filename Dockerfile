@@ -52,7 +52,7 @@ COPY . /usr/local/src/janus-gateway
 
 RUN cd /usr/local/src/janus-gateway && \
 	sh autogen.sh && \
-	./configure --enable-post-processing --prefix=/usr/local && \
+	./configure --enable-post-processing --prefix=/usr/local --enable-post-processing --enable-all-plugins --enable-all-transports --enable-websockets --enable-http && \
 	make && \
 	make install && \
 	make configs
@@ -120,4 +120,5 @@ EXPOSE 8000
 EXPOSE 7088
 EXPOSE 7089
 
-CMD ["/usr/local/bin/janus"]
+CMD ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
+
