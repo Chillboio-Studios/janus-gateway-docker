@@ -100,10 +100,6 @@ RUN ln -s /usr/lib/libnice.so.10.10.0 /usr/lib/libnice.so.10
 RUN ln -s /usr/lib/libnice.so.10.10.0 /usr/lib/libnice.so
 
 COPY --from=0 /usr/local/lib/janus /usr/local/lib/janus
-COPY --from=0 /usr/local/lib/janus/plugins /usr/local/lib/janus/plugins
-COPY --from=0 /usr/local/lib/janus/transports /usr/local/lib/janus/transports
-COPY --from=0 /usr/local/lib/janus/loggers /usr/local/lib/janus/loggers
-
 COPY --from=0 /usr/local/bin/janus-pp-rec /usr/local/bin/janus-pp-rec
 COPY --from=0 /usr/local/bin/janus-cfgconv /usr/local/bin/janus-cfgconv
 COPY --from=0 /usr/local/etc/janus /usr/local/etc/janus
